@@ -23,7 +23,9 @@ hold on
 %If you want to keep the old data, you just have to save it before starting
 %this program again.
 delete('D:\SteamLibrary\SteamApps\common\Kerbal Space Program\Ships\Script\data.csv');
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%If you have issues, it may be that you're directory isn't the same as mine.%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 blank = [0,0,0,0]; %This just initializes the variables for later
