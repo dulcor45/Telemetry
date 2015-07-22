@@ -1,0 +1,54 @@
+//
+//Stale56
+
+clearscreen.
+
+
+set acceleration to 0. //Initialize acceleration so kOS doesn't hate me later
+
+set runmode to 1.
+until runmode = 0 {
+
+	//CALCULATE ACCELERATION
+	set time1 to missiontime.
+	set velo1 to verticalspeed.	
+	wait 0.001.			//if you don't wait
+	set time2 to missiontime.
+	set velo2 to verticalspeed.
+   	
+	if missiontime > 0 {
+		set acceleration to (velo2-velo1)/(time2-time1).//Calculates the acceleration
+		}
+
+	//log the desired variables. For this example, I have the time, altitude, and acceleration.
+	log (missiontime + "," + ALTITUDE + "," + verticalspeed + "," + acceleration) to data.csv.
+
+
+
+        	if alt:radar < 5 and ABS(VERTICALSPEED) < 1 {
+
+        		lock steering to up.
+
+       			print "Booyah!!".
+
+			panels on.
+       			wait 2.
+       			set runmode to 0. //as soon as you touch down, this program ends
+
+        		}
+
+
+   	if missiontime > 0 {
+		set acceleration to (velo2-velo1)/(time2-time1).//it only starts calculating acceleration when you start accelerating
+		//kOS doesn't have a built-in acceleration calclulator (I think... maybe I just need to look harder...)
+		}
+
+
+	print "MissionTime:   " + round(missiontime) + "      " at (5,6).
+	print "Altitude:      " + round(ALTITUDE) + "      " at (5,7).
+
+	print "Velocity:      " + round(verticalspeed) + "      " at  (5,8).
+	print "acceleration:   " + round(acceleration) + "      " at  (5,9).
+	}
+
+
